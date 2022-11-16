@@ -33,6 +33,10 @@ body {
     font-size: 1.6rem;
     color: var(--negro);
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 h1, h2, h3, h4, h5, p {
     margin: 0;
     padding: 0;
@@ -112,13 +116,12 @@ header,
 }
 .navbar a {
     font-size: 2.4rem;
-    font-weight: 500;
     color: var(--azulMarino);
     transition: .3s ease-in-out;
     position: relative;
 }
 .navbar a:nth-child(2) {
-    font-size: 3.2rem;
+    font-size: 3rem;
 }
 .navbar a::before {
     content: '';
@@ -211,8 +214,7 @@ section {
 .aboutBody h1,
 .contactBody h1 {
     font-family: Ridgeline;
-    font-size: 5rem;
-    font-weight: 700;
+    font-size: 4rem;
     text-transform: uppercase;
     text-align: center;
 }
@@ -277,7 +279,7 @@ section {
     object-fit: cover;
 }
 .proyecto .pInfo {
-    padding: 4rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -429,12 +431,12 @@ section {
 /* CONTACT ME */
 .contact {
     background-color: var(--blanco);
+    height: auto;
 }
 .contactBody h1 {
     color: var(--negro);
 }
 .contactInfo {
-    height: calc(100vh - 20rem);
     display: grid;
     grid-template-rows: 65% 35%;
     gap: 3rem;
@@ -452,12 +454,12 @@ section {
 }
 .contactForm h2 {
     font-family: Ridgeline;
-    font-size: 2.3rem;
+    font-size: 2rem;
     text-align: center;
 }
 .contactForm h3 {
     font-family: Ridgeline;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--rojizo);
     text-align: center;
 }
@@ -542,6 +544,13 @@ section {
     transform: scale(1);
 }
 @media (min-width: 768px) {
+    /* SECTIONS */
+    .portBody h1,
+    .aboutBody h1,
+    .contactBody h1 {
+        font-size: 5rem;
+        font-weight: 700;
+    }
     /* TOP */
     .navbar {
         gap: 4rem;
