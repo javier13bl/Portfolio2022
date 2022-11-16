@@ -1,0 +1,815 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+@font-face {
+    font-family: Ridgeline;
+    src: url(../styles/Ridgeline201-Regular.otf);
+}
+:root {
+    --blanco: #F9F9F9;
+    --gris: #DBDEE0;
+    --gris2: #B1B3B5;
+    --grisOscuro: #484848;
+    --negro: #252525;
+    --negroBlack: #000000;
+    --morado: #BA35F2;
+    --cielo: #6BD1F2;
+    --rojizo: #F23A6B;
+    --indigo: #5F49F2;
+    --indigo2: #374DDB;
+    --lila: #DEBDFF;
+    --azulMarino: #011C40;
+}
+/* GLOBALES */
+html {
+    font-size: 62.5%;
+    line-height: 1;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+    color: var(--negro);
+}
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.6rem;
+}
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+    background-color: unset;
+    outline: none;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: inherit;
+}
+/* TOP */
+header {
+    height: 100vh;
+    font-family: Ridgeline;
+    position: relative;
+}
+header,
+.headerBg {
+    background-image: url('../imgs/headerBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 55%;
+}
+.headerBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 85vh;
+    width: 90%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(250, 250, 250, .5) inset;
+}
+.headerFlex {
+    height: 100%;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.navbar a {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--azulMarino);
+    transition: .3s ease-in-out;
+    position: relative;
+}
+.navbar a:nth-child(2) {
+    font-size: 3.2rem;
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -.25rem;
+    width: 0;
+    height: .2rem;
+    background: var(--cielo);
+    background: linear-gradient(90deg, var(--rojizo) 0%, var(--cielo) 100%);
+    transition: width .4s ease-out;
+}
+.navbar a:hover::before {
+    width: 100%;
+    right: 0;
+    left: auto;
+}
+.navbar a:hover {
+    color: var(--negroBlack);
+}
+.headerText {
+    color: var(--blanco);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.headerText h1,
+.headerText h2 {
+    font-size: 10vw;
+    font-weight: 700;
+}
+.headerText h2 {
+    font-size: 11.5vw;
+}
+.headerText a {
+    padding-top: 4rem;
+    color: var(--blanco);
+    font-size: 2.4rem;
+    font-weight: 500;
+    text-align: right;
+}
+.headerText span {
+    display: none;
+}
+/* MARQUESINA */
+.mScroll {
+    width: 100%;
+    height: 10rem;
+    font-family: Ridgeline;
+    background-color: var(--negroBlack);
+    overflow: hidden;
+}
+.mScroll .mScrollTitle {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 1s ease;
+}
+.mScroll .mScrollTitle > div {
+    display: flex;
+    animation: scrollText 30s infinite linear;
+}
+.mScroll:hover .mScrollTitle > div {
+    animation-play-state: paused;
+}
+.mScroll .mScrollTitle h1 {
+    color: var(--blanco);
+    text-transform: uppercase;
+    cursor: default;
+}
+@keyframes scrollText {
+    from   { transform: translateX(0%); }
+    to { transform: translateX(-50%); }
+}
+/* SECTIONS */
+section {
+    padding: 5rem 0;
+}
+.portBody,
+.aboutBody,
+.aboutInfo,
+.contactBody {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+.portBody h1,
+.aboutBody h1,
+.contactBody h1 {
+    font-family: Ridgeline;
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* PORTFOLIO */
+.portafolio {
+    background-color: var(--lila);
+    height: auto;
+}
+.portBody h1 {
+    color: var(--blanco);
+}
+.proyectos {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 70vh;
+    gap: 5rem;
+}
+.proyecto {
+    display: grid;
+    grid-template-rows: 40% 60%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .3);
+}
+.proyecto .pImgs {
+    overflow: hidden;
+    position: relative;
+}
+.proyecto:nth-child(1) .pImgs {
+    background-color: var(--rojizo);
+}
+.proyecto:nth-child(2) .pImgs {
+    background-color: var(--morado);
+}
+.proyecto:nth-child(3) .pImgs {
+    background-color: var(--cielo);
+}
+.pImgs .parrafo {
+    margin: -2rem 0 0 1rem;
+    width: max-content;
+}
+.pImgs .parrafo p,
+.pImgs .sobreParrafo p {
+    font-size: 4.2vh;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.pImgs .sobreParrafo {
+    position: absolute;
+    top: 0rem;
+    bottom: 3vh;
+    left: 6rem;
+    width: max-content;
+    background-color: var(--gris);
+    padding-left: 1rem;
+    overflow: hidden;
+}
+.pImgs > img {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 65%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.proyecto .pInfo {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: var(--negro);
+}
+.proyecto:nth-child(1) .pInfo {
+    color: var(--rojizo);
+}
+.proyecto:nth-child(2) .pInfo {
+    color: var(--morado);
+}
+.proyecto:nth-child(3) .pInfo {
+    color: var(--cielo);
+}
+.pInfo h2 {
+    font-family: Ridgeline;
+    font-size: 4.2rem;
+    text-transform: uppercase;
+}
+.pInfo h3 {
+    font-weight: 700;
+    color: var(--blanco);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.pInfo p {
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+.pInfo .pBtns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.pBtns a {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    transition: .4s ease-in-out;
+}
+.pBtns a:nth-child(1) {
+    background-color: var(--blanco);
+}
+.pBtns a:nth-child(1):hover {
+    background-color: var(--gris);
+}
+.pBtns a:nth-child(2) {
+    background-color: var(--indigo);
+}
+.pBtns a:nth-child(2):hover {
+    background-color: var(--indigo2);
+}
+.pBtns a svg {
+    display: block;
+    transition: .3s ease-in-out;
+}
+.pBtns a:hover svg {
+    transform: scale(1.08);
+}
+/* ABOUT ME */
+.about {
+    background-color: var(--indigo);
+    height: auto;
+}
+.aboutBody h1 {
+    color: var(--azulMarino);
+}
+.aboutLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.aboutLinks a {
+    color: var(--blanco);
+    padding: .5rem;
+    border-radius: 1rem;
+    transition: .3s ease-in-out;
+}
+.aboutLinks a:hover {
+    box-shadow:  20px 20px 60px #3e2f9d, -20px -20px 60px #8063ff;
+}
+.aboutLinks a svg {
+    display: block;
+    transition: .3s ease-out;
+}
+.aboutLinks a:hover svg {
+    transform: scale(1.05);
+}
+.aboutText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.aboutText h2 {
+    color: var(--blanco);
+    font-family: Ridgeline;
+    font-size: 5.5rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+.aboutText h4 {
+    text-transform: uppercase;
+    color: var(--gris);
+    font-family: Ridgeline;
+}
+.aboutText p {
+    color: var(--blanco);
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+.aboutText p span {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.aboutText a {
+    width: fit-content;
+    padding: 1.2rem 2.4rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blanco);
+    background-color: var(--azulMarino);
+    border-radius: 1rem;
+    transition: .4s ease-in-out;
+}
+.aboutText a:hover {
+    color: var(--lila);
+    box-shadow: 0 0 .5rem rgba(250, 250, 250, .5);
+    transform: translateX(1rem);
+}
+.aboutPic {
+    width: 80%;
+    display: flex;
+    height: fit-content;
+    margin: auto;
+    background-color: var(--lila);
+    border-radius: 40% 60% 40% 60% / 30% 40% 60% 70%;
+    overflow: hidden;
+    box-shadow: 0 0 .5rem rgba(250, 250, 250, .5);
+}
+.aboutPic img {
+    margin-bottom: -2rem;
+}
+/* CONTACT ME */
+.contact {
+    background-color: var(--blanco);
+}
+.contactBody h1 {
+    color: var(--negro);
+}
+.contactInfo {
+    height: calc(100vh - 20rem);
+    display: grid;
+    grid-template-rows: 65% 35%;
+    gap: 3rem;
+}
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contactForm .col {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.contactForm h2 {
+    font-family: Ridgeline;
+    font-size: 2.3rem;
+    text-align: center;
+}
+.contactForm h3 {
+    font-family: Ridgeline;
+    font-size: 2.2rem;
+    color: var(--rojizo);
+    text-align: center;
+}
+.contactForm form {
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.contactForm form label {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--grisOscuro);
+}
+.contactForm form input,
+.contactForm form textarea {
+    border-radius: 1rem;
+    border: .1rem solid var(--gris);
+    padding: 1.2rem;
+    margin: .5rem 0 1rem 0;
+}
+.contactForm form textarea {
+    display: block;
+    width: 100%;
+    height: 8rem;
+}
+.contactForm form input[type=submit] {
+    margin-bottom: 0;
+    background-color: var(--indigo);
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    transition: .3s ease-in-out;
+}
+.contactForm form input[type=submit]:hover {
+    cursor: pointer;
+    background-color: var(--indigo2);
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+    transform: translateX(1rem);
+}
+::placeholder {
+    color: var(--gris2);
+    opacity: 1;
+}
+.contactBody iframe {
+    width: 100%;
+    height: 24vh;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.3);
+}
+/*  GO TOP */
+.gotop-button {
+    position: fixed;
+    bottom: 5rem;
+    right: 5%;
+    padding: 1rem;
+    background-color: var(--indigo);
+    border-radius: 50%;
+    display: flex;
+    outline: none;
+    border: none;
+    z-index: -1;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+    transition: .3s ease-in-out;
+}
+.gotop-button:hover {
+    cursor: pointer;
+    background-color: var(--indigo2);
+}
+.gotop-button svg {
+    display: block;
+    transition: .3s ease-in-out;
+}
+.gotop-button:hover svg {
+    transform: scale(1.08);
+}
+.gotop-visible {
+    z-index: 3;
+    transform: scale(1);
+}
+@media (min-width: 768px) {
+    /* TOP */
+    .navbar {
+        gap: 4rem;
+    }
+    .navbar a {
+        font-size: 3rem;
+    }
+    .navbar a:nth-child(2) {
+        font-size: 4rem;
+    }
+    .headerText a {
+        font-size: 3rem;
+    }
+    /* PORTAFOLIO */
+    .proyectos {
+        grid-auto-rows: 60vh;
+    }
+    .proyecto {
+        grid-template-rows: 60% 40%;
+    }
+    .pImgs .parrafo {
+        margin: -2rem 0 0 3rem;
+    }
+    .pImgs .parrafo p,
+    .pImgs .sobreParrafo p {
+        font-size: 6vh;
+    }
+    .pImgs .sobreParrafo {
+        position: absolute;
+        top: 0rem;
+        bottom: 5vh;
+        left: 12rem;
+        padding-left: 3rem;
+    }
+    .pImgs > img {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        width: 45%;
+    }
+    .pInfo h2 {
+        font-size: 5rem;
+    }
+    /* ABOUT ME */
+    .aboutText {
+        gap: 4rem;
+    }
+    .aboutText p {
+        font-size: 2.2rem;
+    }
+    .aboutText a {
+        padding: 1.5rem 3rem;
+    }
+    .aboutPic {
+        width: 40%;
+    }
+    /* CONTACT ME */
+    .contactInfo {
+        height: 45vh;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        gap: 2rem;
+    }
+    .contactForm,
+    .contactBody iframe {
+        height: 40vh;
+    }
+}
+@media (min-width: 1200px) {
+    /* STICKY */
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    }
+    /* SECTIONS */
+    .portBody,
+    .aboutBody,
+    .aboutInfo,
+    .contactBody {
+        display: grid;
+        gap: 0;
+    }
+    .portBody h1,
+    .aboutBody h1,
+    .contactBody h1 {
+        height: calc(100vh - 10rem);
+        text-align: left;
+        writing-mode:vertical-rl;
+        transform: rotate(180deg);
+    }
+    .proyectos,
+    .aboutText,
+    .contactInfo,
+    .contactForm {
+        height: calc(100vh - 10rem);
+    }
+    .proyecto .pImgs,
+    .proyecto .pInfo {
+        height: calc(100vh - 11rem);
+    }
+    /* HEADER */
+    .headerBg {
+        height: 80vh;
+    }
+    .navbar {
+        align-items: flex-end;
+        gap: 2rem;
+    }
+    .navbar a {
+        font-size: 2.4rem;
+    }
+    .navbar a:nth-child(2) {
+        font-size: 3rem;
+    }
+    .headerText {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        gap: 0;
+    }
+    .headerText h1,
+    .headerText h2 {
+        font-size: 5vw;
+    }
+    .headerText h2 {
+        font-size: 6.5vw;
+    }
+    .headerText a {
+        font-size: 2.4rem;
+    }
+    .headerText span {
+        display: inherit;
+    }
+    /* PORTFOLIO */
+    .portBody {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+    .proyectos {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 90%;
+        gap: 2rem;
+        overflow-y: hidden;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 2rem;
+    }
+    .proyecto {
+        scroll-snap-align: start;
+        display: grid;
+        grid-template-columns: 65% 35%;
+        margin: 1rem 2rem 0 2rem;
+    }
+    .pImgs .parrafo {
+        margin: -2rem 0 0 1rem;
+    }
+    .pImgs .parrafo p,
+    .pImgs .sobreParrafo p {
+        font-size: 5vw;
+    }
+    .pImgs .sobreParrafo {
+        position: absolute;
+        top: 0rem;
+        bottom: 5.8vw;
+        left: 8rem;
+        padding-left: 1rem;
+    }
+    .pImgs > img {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 65%;
+    }
+    /* ABOUT ME */
+    .aboutBody {
+        grid-template-columns: 1fr 9fr;
+    }
+    .aboutInfo {
+        grid-template-columns: 1fr 6fr 3fr;
+        gap: 3rem;
+    }
+    .aboutLinks {
+        margin: 15vh 0;
+        flex-direction: column;
+    }
+    .aboutText {
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .aboutText p {
+        font-size: 1.6rem;
+    }
+    .aboutText a {
+        padding: 1.2rem 2.4rem;
+        font-size: 1.8rem;
+    }
+    .aboutPic {
+        width: 80%;
+    }
+    /* CONTACTO */
+    .contactBody {
+        grid-template-columns: 1fr 8fr 1fr;
+    }
+    .contactInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 4rem;
+    }
+    .contactForm h2 {
+        font-size: 2.6rem;
+    }
+    .contactBody iframe {
+        height: inherit;
+    }
+}
+@media (min-width: 1400px) {
+    .navbar a {
+        font-size: 3rem;
+    }
+    .navbar a:nth-child(2) {
+        font-size: 4rem;
+    }
+    .mScroll {
+        height: 12rem;
+    }
+    section {
+        padding: 8rem 0;
+    }
+    .portBody h1,
+    .aboutBody h1,
+    .contactBody h1 {
+        height: calc(100vh - 16rem);
+    }
+    .proyectos,
+    .aboutText,
+    .contactInfo,
+    .contactForm {
+        height: calc(100vh - 16rem);
+    }
+    .proyecto .pImgs,
+    .proyecto .pInfo {
+        height: calc(100vh - 17rem);
+    }
+    .pImgs > img {
+        width: 70%;
+    }
+    .pBtns a {
+        padding: 1.5rem;
+    }
+    .aboutLinks a {
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+    .aboutText a {
+        padding: 1.5rem 3rem;
+    }
+    .contactForm {
+        justify-content: space-evenly;
+    }
+    .contactForm h2 {
+        font-size: 3.2rem;
+    }
+    .contactForm h3 {
+        font-size: 2.6rem;
+    }
+    .contactForm form input[type=submit] {
+        padding: 1.5rem;
+    }
+}
