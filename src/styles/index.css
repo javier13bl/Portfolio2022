@@ -274,7 +274,7 @@ section {
     position: absolute;
     top: 10%;
     right: 5%;
-    width: 65%;
+    width: 60%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
@@ -544,6 +544,22 @@ section {
     z-index: 3;
     transform: scale(1);
 }
+/* FOOTER */
+footer {
+    background-color: var(--negro);
+    padding: 2rem 0;
+}
+footer .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+footer p,
+footer a {
+    color: var(--blanco);
+}
 @media (min-width: 768px) {
     /* SECTIONS */
     .portBody h1,
@@ -618,6 +634,10 @@ section {
     .contactForm,
     .contactBody iframe {
         height: 40vh;
+    }
+    /* FOOTER */
+    footer .footer {
+        flex-direction: row;
     }
 }
 @media (min-width: 1200px) {

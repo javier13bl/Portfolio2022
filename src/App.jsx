@@ -17,6 +17,12 @@ const App = () => {
                 <About/>
                 <Contact/>
             </main>
+            <footer>
+                <div className='footer wrapper'>
+                    <p>&copy; Todos los derechos reservados, 2022.</p>
+                    <a href='https://github.com/javier13bl' target='_blank'>Desarrollado por Javier Buitrago</a>
+                </div>
+            </footer>
             <GoTop/>
         </>
     )
