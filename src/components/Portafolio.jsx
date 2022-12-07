@@ -4,12 +4,84 @@ import carbo from '../imgs/carbo.png'
 
 const Portafolio = () => {
     const nueve = [1,2,3,4,5,6,7,8,9];
-    const siete = [1,2,3,4,5,6,7];
+
+    const projects = [
+        {
+            fecha : 'oct22',
+            tituloFondo : 'Carbo Web Carbo Web',
+            img : carbo,
+            imgAlt : 'Carbo Web preview',
+            titulo : 'Carbo Web',
+            resumen : 'Propuesta de Diseño para Empresa de Carbón',
+            tools : 'HTML | CSS | React JS | react-router-dom | Links',
+            github : 'https://github.com/javier13bl/CarboWeb',
+            webpage : 'https://carboexco.netlify.app'
+        }, {
+            fecha : 'sep22',
+            tituloFondo : 'Nasa App Nasa App',
+            img : nasa,
+            imgAlt : 'Nasa App preview',
+            titulo : 'Nasa App',
+            resumen : 'Foto Astronómica del Día (APOD) - NasaAPI',
+            tools : 'HTML | CSS | React JS | react-router-dom | react-navigate',
+            github : 'https://github.com/javier13bl/Nasa_APOD_App',
+            webpage : 'https://gleeful-sprite-be6768.netlify.app'
+        }, {
+            fecha : 'jun22',
+            tituloFondo : 'Pokédex App Pokédex',
+            img : poke,
+            imgAlt : 'Pokédex App preview',
+            titulo : 'Poke App',
+            resumen : 'Aplicación Informativa Pokédex - PokeAPI',
+            tools : 'HTML | CSS | React JS | react-router-dom | react-paginate',
+            github : 'https://github.com/javier13bl/Pokedex_React',
+            webpage : 'https://bucolic-heliotrope-3fba7f.netlify.app'
+        }
+    ]
+
     return (
         <section className='portafolio sticky' id='portafolio'>
             <div className='portBody wrapper'>
                 <h1>Portafolio</h1>
                 <div className='proyectos'>
+                    {projects.map( project => (
+                        <div className='proyecto' key={project.fecha}>
+                            <div className='pImgs'>
+                                <div className='parrafo'>
+                                    {nueve.map( i => <p key={i}>{project.tituloFondo}</p>)}
+                                </div>
+                                <div className='sobreParrafo'>
+                                    {nueve.map( i => <p key={i}>{project.tituloFondo}</p>)}
+                                </div>
+                                <img src={project.img} alt={project.imgAlt}/>
+                            </div>
+                            <div className='pInfo'>
+                                <h2>{project.titulo}</h2>
+                                <h3>{project.resumen}</h3>
+                                <p>{project.tools}</p>
+                                <div className='pBtns'>
+                                    <a href={project.github} target='_blank' title='Código'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-github" width="30" height="30" viewBox="0 0 24 24" strokeWidth="2" stroke="#000" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <polyline points="7 8 3 12 7 16" />
+                                            <polyline points="17 8 21 12 17 16" />
+                                            <line x1="14" y1="4" x2="10" y2="20" />
+                                        </svg>
+                                    </a>
+                                    <a href={project.webpage} target='_blank' title='Página Web'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-brand-github" width="30" height="30" viewBox="0 0 24 24" strokeWidth="2" stroke="#FFF" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <line x1="20" y1="4" x2="12" y2="12" />
+                                            <polyline points="12 4 20 4 20 12" />
+                                            <path d="M18 16v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {/* <div className='proyectos'>
                     <div className='proyecto'>
                         <div className='pImgs'>
                             <div className='parrafo'>
@@ -123,8 +195,8 @@ const Portafolio = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
             </div>
         </section>
     )

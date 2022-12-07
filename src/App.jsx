@@ -11,7 +11,7 @@ const App = () => {
             <Header/>
             <main>
                 <Marquesina>
-                    &nbsp;HTML &#9474; CSS &#9474; JavaScript &#9474; React JS &#9474; SQL &#9474; Python &#9474; Java &#9474; IELTS C1/B2 &#9474; HTML &#9474; CSS &#9474; JavaScript &#9474; React JS &#9474; SQL &#9474; Python &#9474; Java &#9474; IELTS C1/B2 &#9474;
+                    &nbsp;HTML &#9474; CSS &#9474; JavaScript &#9474; React JS &#9474; GIT &#9474; SEO &#9474; Bootstrap &#9474; Tailwind CSS &#9474; SQL &#9474; Python &#9474; Java &#9474; IELTS B2/C1 &#9474;
                 </Marquesina>
                 <Portafolio />
                 <About/>
